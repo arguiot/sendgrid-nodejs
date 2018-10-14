@@ -30,7 +30,7 @@ class Client {
     //Default headers
     this.defaultHeaders = {
       'Accept': 'application/json',
-      'User-agent': 'sendgrid/' + pkg.version + ';nodejs',
+      'User-agent': `sendgrid/${pkg.version};nodejs`,
     };
 
     //Empty default request
@@ -76,7 +76,7 @@ class Client {
 
     //Add API key, but don't overwrite if header already set
     if (typeof headers.Authorization === 'undefined' && this.apiKey) {
-      headers.Authorization = 'Bearer ' + this.apiKey;
+      headers.Authorization = `Bearer ${this.apiKey}`;
     }
 
     //Return
